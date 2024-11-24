@@ -28,6 +28,8 @@ public class AddExpenseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+        //Change 1
+        //Change 2
         View view = inflater.inflate(R.layout.fragment_add_expense, container, false);
 
         dbHelper = new DatabaseHelper(getContext());
