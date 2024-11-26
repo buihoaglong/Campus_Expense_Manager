@@ -1,1 +1,1 @@
-Campus Expense Manager
+Campus Expense Manager Application
