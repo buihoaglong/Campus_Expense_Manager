@@ -18,7 +18,7 @@ public class AddExpenseFragment extends Fragment {
 
 
     private DatabaseHelper dbHelper;
-    private EditText amountEditText, descriptionEditText, dateEditText, categoryEditText;
+    private EditText amountEditText, descriptionEditText, dateEditText;
 
 
     public AddExpenseFragment(){
@@ -28,6 +28,8 @@ public class AddExpenseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+        //Change 1
+        //Change 2
         View view = inflater.inflate(R.layout.fragment_add_expense, container, false);
 
         dbHelper = new DatabaseHelper(getContext());
@@ -35,7 +37,6 @@ public class AddExpenseFragment extends Fragment {
         amountEditText = view.findViewById(R.id.amountEditText);
         descriptionEditText = view.findViewById(R.id.descriptionEditText);
         dateEditText = view.findViewById(R.id.dateEditText);
-        categoryEditText = view.findViewById(R.id.CategoryEditText);
         Button addButton = view.findViewById(R.id.addButton);
 
         Button btnDisplay = view.findViewById(R.id.btnDisplay);
@@ -71,15 +72,14 @@ public class AddExpenseFragment extends Fragment {
         String date = dateEditText.getText().toString();
 
 
-        boolean inserted = dbHelper.insertExpense(amount, description, date);
-        if (inserted) {
-            Toast.makeText(getContext(), "Expense added", Toast.LENGTH_SHORT).show();
-            amountEditText.setText("");
-            descriptionEditText.setText("");
-            dateEditText.setText("");
-            categoryEditText.setText("");
-        } else {
-            Toast.makeText(getContext(), "Error adding expense", Toast.LENGTH_SHORT).show();
-        }
+//        boolean inserted = dbHelper.insertExpense(amount, description, date);
+//        if (inserted) {
+//            Toast.makeText(getContext(), "Expense added", Toast.LENGTH_SHORT).show();
+//            amountEditText.setText("");
+//            descriptionEditText.setText("");
+//            dateEditText.setText("");
+//        } else {
+//            Toast.makeText(getContext(), "Error adding expense", Toast.LENGTH_SHORT).show();
+//        }
     }
 }

@@ -1,2 +1,1 @@
-# Campus_Expense_Manager
- Expense Manager Application
+Campus Expense Manager

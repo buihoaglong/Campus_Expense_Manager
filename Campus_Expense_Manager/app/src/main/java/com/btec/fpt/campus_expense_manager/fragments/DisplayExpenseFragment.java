@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.btec.fpt.campus_expense_manager.R;
 import com.btec.fpt.campus_expense_manager.database.DatabaseHelper;
+import com.btec.fpt.campus_expense_manager.entities.Transaction;
 
 import java.util.ArrayList;
 
@@ -36,20 +37,16 @@ public class DisplayExpenseFragment extends Fragment {
 
     private void loadExpenses() {
         ArrayList<String> expenseList = new ArrayList<>();
-        Cursor cursor = dbHelper.getAllExpenses();
 
-        if (cursor.moveToFirst()) {
-            do {
-                @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex("date"));
-                @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex("description"));
-                @SuppressLint("Range") double amount = cursor.getDouble(cursor.getColumnIndex("amount"));
-                expenseList.add(date + " - " + description + ": $" + amount);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, expenseList);
-        expensesListView.setAdapter(adapter);
+//        for(Transaction transaction: dbHelper.getTransactionList() )
+//        {
+//
+//
+//            expenseList.add(date + " - " + description + ": $" + amount);
+//        }
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, expenseList);
+//        expensesListView.setAdapter(adapter);
     }
 
 }
