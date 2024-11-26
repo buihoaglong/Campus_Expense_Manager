@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import com.btec.fpt.campus_expense_manager.HomeActivity;
 import com.btec.fpt.campus_expense_manager.R;
+import com.btec.fpt.campus_expense_manager.database.DatabaseHelper;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -39,6 +40,7 @@ public class LoginFragment extends Fragment {
     // Initialize SharedPreferences
 
 
+    DatabaseHelper databaseHelper =null;
     View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class LoginFragment extends Fragment {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("UserPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        databaseHelper = new DatabaseHelper(getContext());
         // Find buttons
         Button loginButton = view.findViewById(R.id.login_button);
         Button registerButton = view.findViewById(R.id.goto_register_button);
@@ -60,20 +63,37 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+
+
                 String email = edtEmail.getText().toString();
                 String pwd = edtPassword.getText().toString();
 
                 if(!email.isEmpty() && !pwd.isEmpty()){
-                    // Luu mat khau va email
-                    editor.putString("email", email);
-                    editor.putString("password", pwd);  // Store hashed/encrypted version instead
-                    editor.apply();  // or use commit() for synchronous saving
 
-                    Intent intent = new Intent(getActivity(), HomeActivity.class);
-                    startActivity(intent);
+
+                  boolean check =   databaseHelper.signIn(email, pwd);
+
+                  if(check){
+                      // Luu mat khau va email
+                      editor.putString("email", email);
+                      editor.putString("password", pwd);  // Store hashed/encrypted version instead
+                      editor.apply();  // or use commit() for synchronous saving
+
+
+                      Intent intent = new Intent(getActivity(), HomeActivity.class);
+                      startActivity(intent);
+                  }else {
+
+                      showToastCustom("Email or password incorrect!");
+
+                  }
+
+
                 }else {
                     showToastCustom("Email or password is invalid !!!");
                 }
+
+
             }
         });
 
@@ -89,10 +109,11 @@ public class LoginFragment extends Fragment {
         forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                showCustomAlertDialog();
-                loadFragment(new ForgotPasswordFragment());
+
+                showCustomAlertDialog();
             }
         });
+
         return view;
     }
 
@@ -102,7 +123,7 @@ public class LoginFragment extends Fragment {
         View layout = inflater.inflate(R.layout.custom_toast, view.findViewById(R.id.custom_toast_layout));
 // Set the icon
         ImageView icon = layout.findViewById(R.id.toast_icon);
-        icon.setImageResource(R.drawable.casshappimg);  // Set your desired icon
+        icon.setImageResource(R.drawable.icon_x);  // Set your desired icon
 
 // Set the text
         TextView text = layout.findViewById(R.id.toast_message);

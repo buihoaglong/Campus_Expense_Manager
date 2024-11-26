@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Show LoginFragment by default
         loadFragment(new LoginFragment());
+
     }
 
     private void loadFragment(Fragment fragment) {

@@ -32,6 +32,8 @@ public class HomeActivity extends AppCompatActivity {
 
         // Show LoginFragment by default
         loadFragment(new HomeFragment());
+
+
     }
 
 
