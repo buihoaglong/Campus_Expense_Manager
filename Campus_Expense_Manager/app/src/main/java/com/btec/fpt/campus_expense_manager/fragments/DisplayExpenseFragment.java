@@ -44,7 +44,7 @@ public class DisplayExpenseFragment extends Fragment {
 //        for(Transaction transaction: dbHelper.getTransactionList() )
 //        {
 //
-//            expenseList.add(date + " - " + description + ": $" + amount);
+//            expenseList.add(date + "   - " + description + ": $" + amount);
 //        }
 //
 //        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, expenseList);
