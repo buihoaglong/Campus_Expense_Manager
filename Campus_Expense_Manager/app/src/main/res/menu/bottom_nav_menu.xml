@@ -1,10 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:title="Home" />
-    <item android:title="Expense Tracking" />
-    <item android:title="Budget Setting" />
-    <item android:title="Display Expense" />
-    <item android:title="Notifications" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_expense_tracking"
+        android:icon="@drawable/ic_expensetracking"
+        android:title="Tracking" />
+    <item
+        android:id="@+id/nav_budget_setting"
+        android:icon="@drawable/ic_budgetsetting"
+        android:title="Budget Setting" />
+    <item
+        android:id="@+id/nav_displayExpense"
+        android:icon="@drawable/ic_displayexpense"
+        android:title="Display All" />
+    <item
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="Notifications" />
 </menu>
