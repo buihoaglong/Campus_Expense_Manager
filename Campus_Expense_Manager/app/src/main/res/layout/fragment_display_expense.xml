@@ -23,5 +23,6 @@
         android:text="Clear History"
         android:backgroundTint="@android:color/holo_red_dark"
         android:textColor="@android:color/white"
+        android:layout_marginBottom="70dp"
         android:layout_marginTop="16dp" />
 </LinearLayout>

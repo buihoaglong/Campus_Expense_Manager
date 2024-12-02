@@ -98,6 +98,7 @@ public class HomeFragment  extends Fragment {
 
         Button btnAddExpense = view.findViewById(R.id.btnAddExpense);
         Button btnDisplayAll = view.findViewById(R.id.btnDisplay);
+        Button btnAddCategory = view.findViewById(R.id.btnAddCategory);
 
 
         btnAddExpense.setOnClickListener(new View.OnClickListener() {

@@ -403,7 +403,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Method to insert default categories into the database
     private void insertDefaultCategories(SQLiteDatabase db, String email) {
-        String[] defaultCategories = {"Food", "Transport", "Entertainment", "Utilities", "Health"};
+        String[] defaultCategories = {"Food", "Transport", "Entertainment", "Utilities", "Health","House Fee","Shopping"};
 
         for (String categoryName : defaultCategories) {
             ContentValues values = new ContentValues();
