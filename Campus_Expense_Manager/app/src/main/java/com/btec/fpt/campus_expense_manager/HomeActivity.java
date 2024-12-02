@@ -16,8 +16,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.btec.fpt.campus_expense_manager.fragments.AddExpenseFragment;
+import com.btec.fpt.campus_expense_manager.fragments.DisplayExpenseFragment;
 import com.btec.fpt.campus_expense_manager.fragments.HomeFragment;
+import com.btec.fpt.campus_expense_manager.fragments.SetBudgetFragment;
 import com.btec.fpt.campus_expense_manager.models.Item;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,32 @@ public class HomeActivity extends AppCompatActivity {
         // Show LoginFragment by default
         loadFragment(new HomeFragment());
 
+        // Ánh xạ BottomNavigationView
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        // Xử lý sự kiện khi người dùng chọn mục
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+
+            // Dùng if-else để xác định fragment nào cần chuyển đến
+            if (item.getItemId() == R.id.nav_home) {
+                selectedFragment = new HomeFragment(); // ko can thay doi
+            } else if (item.getItemId() == R.id.nav_expense_tracking) {
+                selectedFragment = new AddExpenseFragment(); // ko can thay doi
+            } else if (item.getItemId() == R.id.nav_budget_setting){
+                selectedFragment = new SetBudgetFragment(); // can thay doi sang BudgetSetting Fragment
+            } else if (item.getItemId() == R.id.nav_displayExpense) {
+                selectedFragment = new DisplayExpenseFragment(); // ko can thay doi
+            } else if (item.getItemId() == R.id.nav_notifications) {
+                selectedFragment = new DisplayExpenseFragment(); // cần đổi fragment sang Notifications
+            }
+
+            // Nếu đã chọn được Fragment, chuyển đổi sang Fragment đó
+            if (selectedFragment != null) {
+                loadFragment(selectedFragment);
+            }
+            return true;
+        });
 
     }
 

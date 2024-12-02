@@ -12,7 +12,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#171b27">
 
 
         <RelativeLayout
@@ -24,7 +25,7 @@
                 android:id="@+id/tv_name"
 
                 android:textColor="@android:color/darker_gray"
-                android:textSize="12sp"
+                android:textSize="20sp"
                 android:text="Jane Nguyen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -34,7 +35,7 @@
 
             <ImageView
                 android:layout_alignParentRight="true"
-                android:src="@drawable/icon_x"
+                android:src="@drawable/logoapp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
 
@@ -61,7 +62,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:id="@+id/tvFullname"
-                android:text="DINH VAN DONG"
+                android:text="BUI HOANG LONG"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -82,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/btnAddExpense"
                 android:text="Add Expense"
                 android:layout_width="wrap_content"
@@ -90,9 +91,17 @@
 
             <Button
                 android:id="@+id/btnDisplay"
-                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/btnAddExpense"
-                android:text="Display All"
+                android:text="Display All" />
+
+            <Button
+                android:id="@+id/btnAddCategory"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/btnDisplay"
+                android:text="Add Category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
@@ -134,9 +143,8 @@
                         android:layout_centerHorizontal="true"
                         android:textAlignment="center"
                         android:layout_below="@id/category1"
-                        android:text="Mua sắm"
+                        android:text="Shopping"
                         android:textSize="10sp"
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </RelativeLayout>
@@ -173,7 +181,7 @@
 
 
                         android:layout_below="@id/category2"
-                        android:text="Tiền trả ngân hàng"
+                        android:text="Bank payment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
@@ -206,7 +214,7 @@
                         android:textSize="10sp"
 
                         android:layout_below="@id/category3"
-                        android:text="Tiền lương"
+                        android:text="Salary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
@@ -242,7 +250,7 @@
                         android:textSize="10sp"
 
                         android:layout_below="@id/category4"
-                        android:text="Tiền điện nước"
+                        android:text="Service Bills"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </RelativeLayout>
@@ -274,7 +282,7 @@
                     <TextView
                         android:layout_centerHorizontal="true"
                         android:layout_below="@id/category5"
-                        android:text="Tiền nhà"
+                        android:text="House fee"
                         android:textSize="10sp"
 
                         android:layout_width="match_parent"
@@ -307,16 +315,13 @@
 
                     <TextView
                         android:layout_below="@id/category6"
-                        android:text="Tiền bảo hiểm"
+                        android:text="Insurance fee"
                         android:textSize="10sp"
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                 </RelativeLayout>
-
-
-
 
             </LinearLayout>
 

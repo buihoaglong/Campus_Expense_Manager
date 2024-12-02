@@ -2,8 +2,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@android:color/white">
 
+    <!-- Danh sách giao dịch -->
     <ListView
         android:id="@+id/expensesListView"
         android:layout_width="match_parent"
@@ -13,14 +15,14 @@
         android:dividerHeight="8dp"
         android:layout_marginTop="8dp" />
 
-    <!-- Nút để xóa toàn bộ lịch sử -->
+    <!-- Nút xóa toàn bộ lịch sử -->
     <Button
-        android:id="@+id/btnClearHistory"
+        android:id="@+id/clearHistoryButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Clear History"
-        android:layout_marginTop="16dp"
-        android:background="@color/cardview_dark_background"
+        android:backgroundTint="@android:color/holo_red_dark"
         android:textColor="@android:color/white"
-        android:padding="12dp" />
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="16dp" />
 </LinearLayout>
