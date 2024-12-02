@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.btec.fpt.campus_expense_manager.fragments.AddExpenseFragment;
 import com.btec.fpt.campus_expense_manager.fragments.DisplayExpenseFragment;
 import com.btec.fpt.campus_expense_manager.fragments.HomeFragment;
+import com.btec.fpt.campus_expense_manager.fragments.SetBudgetFragment;
 import com.btec.fpt.campus_expense_manager.models.Item;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -48,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.nav_expense_tracking) {
                 selectedFragment = new AddExpenseFragment(); // ko can thay doi
             } else if (item.getItemId() == R.id.nav_budget_setting){
-                selectedFragment = new DisplayExpenseFragment(); // can thay doi sang BudgetSetting Fragment
+                selectedFragment = new SetBudgetFragment(); // can thay doi sang BudgetSetting Fragment
             } else if (item.getItemId() == R.id.nav_displayExpense) {
                 selectedFragment = new DisplayExpenseFragment(); // ko can thay doi
             } else if (item.getItemId() == R.id.nav_notifications) {

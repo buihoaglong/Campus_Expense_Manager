@@ -132,5 +132,4 @@ public class HomeFragment  extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
-    }
+}
