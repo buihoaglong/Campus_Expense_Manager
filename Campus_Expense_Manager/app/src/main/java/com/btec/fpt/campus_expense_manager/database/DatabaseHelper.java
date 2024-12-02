@@ -139,6 +139,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return rowsDeleted > 0;
     }
+    // Phương thức xóa tất cả giao dịch
+    public void clearAllTransactions() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM transactions"); // "transactions" là tên bảng của bạn, thay đổi nếu cần
+        db.close();
+    }
 
     // Insert a new user record
     public boolean insertUser(String firstName, String lastName, String email, String password) {
